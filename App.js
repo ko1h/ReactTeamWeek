@@ -82,7 +82,7 @@ const AppNavigator = createStackNavigator({
     screen: HighScoreList,
   }
 }, {
-    initialRouteName: 'HighScore',
+    initialRouteName: 'Welcome',
 });
 
 
