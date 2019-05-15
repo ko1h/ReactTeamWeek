@@ -16,40 +16,42 @@ export default class Welcome extends React.Component {
       render() {
 
         return (
-          <View style={styles.container}>
+          <View>
             <View style={styles.background}>
               <ImageBackground source={background} style={{width: '100%', height: '100%'}}>
               </ImageBackground>
             < /View>
               <View style={styles.buttonContainer}>
-              <Button color="#FFFFFF"
-                title="START"
-                onPress={() => {
-                  this.props.navigation.dispatch(StackActions.reset({
-                    index: 0,
-                    actions: [
-                      NavigationActions.navigate({ routeName: 'Menu' })
-                    ],
-                  }))
-                }}
-              />
-            </View>
+                <View style={styles.button}>
+                  <Button color="#FFFFFF"
+                    title="START"
+                    onPress={() => {
+                      this.props.navigation.dispatch(StackActions.reset({
+                        index: 0,
+                        actions: [
+                          NavigationActions.navigate({ routeName: 'Menu' })
+                        ],
+                      }))
+                    }}
+                  />
+                </View>
+              </View>
           </ View>
         );
       }
     }
 
     const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignContent: 'center',
-      },
       buttonContainer: {
         position: 'absolute',
-        justifyContent: 'center',
+        flexDirection: 'column',
         alignSelf: 'center',
-        backgroundColor: 'rgba(135,206,250, 0.5)',
+        justifyContent: 'center',
+        height: '100%'
+      },
+      button: {
+        backgroundColor: 'rgba(197, 239, 247, 0.8)',
+        marginBottom: 10,
         borderRadius: 10,
         padding: 10,
         shadowColor: '#000000',
@@ -59,8 +61,5 @@ export default class Welcome extends React.Component {
         },
         shadowRadius: 10,
         shadowOpacity: 0.25
-      },
-      background: {
-        position: 'relative'
       }
     })
