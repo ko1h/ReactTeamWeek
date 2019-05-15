@@ -9,6 +9,9 @@ import HighScoreList from './src/components/HighScoreList';
 
 import Welcome from './src/components/Welcome';
 import Menu from './src/components/Menu';
+import Scroll from './src/components/Scroll';
+
+
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
 
@@ -80,10 +83,14 @@ const AppNavigator = createStackNavigator({
   },
   HighScore: {
     screen: HighScoreList,
+  },
+  Scroll: {
+    screen: Scroll,
   }
-}, {
-    initialRouteName: 'Welcome',
-});
+  },
+  {
+      initialRouteName: 'Scroll',
+  });
 
 
 export default createAppContainer(AppNavigator);
